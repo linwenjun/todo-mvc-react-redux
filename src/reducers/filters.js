@@ -4,6 +4,7 @@ const initState = [
   { label: 'Active' }
 ]
 
+// 返回新数组即可
 const filters = (state = initState, action) => {
   switch(action.type) {
     case 'SWITCH_FILTER':

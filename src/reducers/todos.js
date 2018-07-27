@@ -23,9 +23,9 @@ const todos = (state = initState, action) => {
       return newState;
     case 'UPDATE_TODO':
       return state.map((item, idx) => {
-        const { label: newLabel, idx: todoIdx } = action.data
+        const { label: newLabel, idx: newIdx } = action.data
         return Object.assign({}, item, {
-          label: idx === todoIdx ? newLabel : item.label
+          label: idx === newIdx ? newLabel : item.label
         })
       })
     case 'CLEAR_COMPLETED':

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+// 可选 通过 class 控制显隐
 const ClearCompletedBtn = ({isShowClearBtn, clearCompleted}) => {
   if(isShowClearBtn) {
     return <button className="clear-completed"
@@ -30,15 +31,18 @@ const FilterList = ({ filters, switchFilter }) => {
 const Footer = (props) => {
   return (
     <footer className="footer">
-      <span className="todo-count"><strong>{props.leftCount}</strong> item left</span>
+      <span className="todo-count">
+      <strong>{props.leftCount}</strong> item left</span>
       <ul className="filters">
         <FilterList {...props} />
+        
       </ul>
       <ClearCompletedBtn {...props} />
     </footer>
   )
 }
 
+//props的解构赋值 相当于 <FilterList filters={filters} .... />
 const mapStateToProps = ({ filters, todos }) => ({
   filters,
   leftCount: todos.filter(todo => !todo.completed).length,
