@@ -22,10 +22,14 @@ class Todo extends Component {
 	}
 
 	render() {
-		const { label, completed=false, toggleTodo, idx } = this.props
+		const { label, isHidden=false, completed=false, toggleTodo, idx } = this.props
 		let clazz = completed ? 'completed' : '';
 		if(this.state.editing) {
 			clazz += ' editing'
+		}
+
+		if(isHidden) {
+			clazz += ' hidden'
 		}
 		
 		return (

@@ -28,9 +28,17 @@ const getVisibleTodos = (todos, filters) => {
   const filter = filters.find(item => item.selected);
   switch (filter.label) {
     case 'Completed':
-      return todos.filter(todo => todo.completed)
+      return todos.map(todo => {
+        return Object.assign({}, todo, {
+          isHidden: !todo.completed
+        })
+      })
     case 'Active':
-      return todos.filter(todo => !todo.completed)
+      return todos.map(todo => {
+        return Object.assign({}, todo, {
+          isHidden: todo.completed
+        })
+      })
     default:
       return todos;
   }
