@@ -13,6 +13,13 @@
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.0"
   },
+  "proxy": {
+    "/": {
+      "target": "http://localhost:8080",
+      "secure": false,
+      "changeOrigin": true
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
