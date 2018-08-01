@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import 'todomvc-common/base.css'
 import 'todomvc-app-css/index.css'
-import 'todomvc-common/base'
 
 import TodoList from './components/TodoList'
 import Header from './components/Header'
